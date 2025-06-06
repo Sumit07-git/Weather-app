@@ -1,7 +1,7 @@
 class WeatherApp {
   constructor() {
     this.API_KEY = "ebc7e6d6a5516b2cfead85fb9002defe"
-    this.BASE_URL = "https://home.openweathermap.org/api_keys"
+    this.BASE_URL = "https://api.openweathermap.org/data/2.5"
 
     this.initializeElements()
     this.bindEvents()
@@ -19,8 +19,6 @@ class WeatherApp {
     this.errorText = document.getElementById("errorText")
     this.loading = document.getElementById("loading")
     this.weatherContent = document.getElementById("weatherContent")
-
-
     this.cityName = document.getElementById("cityName")
     this.currentDate = document.getElementById("currentDate")
     this.weatherIcon = document.getElementById("weatherIcon")
@@ -160,13 +158,10 @@ class WeatherApp {
 
 
       this.cityInput.value = ""
-
-
       this.showWeatherData()
 
-
       this.weatherContent.style.animation = "none"
-      this.weatherContent.offsetHeight // Trigger reflow
+      this.weatherContent.offsetHeight 
       this.weatherContent.style.animation = "fadeIn 0.6s ease-out"
     } catch (error) {
       console.error("Error displaying weather data:", error)
@@ -248,7 +243,7 @@ style.textContent = `
 `
 document.head.appendChild(style)
 
-const apiKey = "24187e76308498f5275b891df9eb7dba"
+const apiKey = "ebc7e6d6a5516b2cfead85fb9002defe"
 const BASE_URL = "https://api.openweathermap.org/data/2.5"
 
 
