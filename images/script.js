@@ -1,7 +1,7 @@
 class WeatherApp {
   constructor() {
-    this.API_KEY = "8ac5c4e57ba6a4b3dfcf622700447b1e" // OpenWeatherMap API key
-    this.BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
+    this.API_KEY = "ebc7e6d6a5516b2cfead85fb9002defe"
+    this.BASE_URL = "https://home.openweathermap.org/api_keys"
 
     this.initializeElements()
     this.bindEvents()
