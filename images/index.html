@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" type="image/jpg" href="favicon.jpg.jpeg">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <title>Weather App</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        
+        <div class="particles-container"></div>
+        
+        
+        <div class="weather-overlay"></div>
+
+        <div class="weather-app">
+            
+            <div class="app-header">
+                <h1>WEATHER MONITORING WEBSITE</h1>
+                <div class="header-controls">
+                    <div class="unit-toggle">
+                        <button class="unit-btn active" data-unit="celsius">°C</button>
+                        <button class="unit-btn" data-unit="fahrenheit">°F</button>
+                    </div>
+                    <button class="theme-toggle" title="Toggle Theme">
+                        <i class="material-icons">brightness_6</i>
+                    </button>
+                </div>
+            </div>
+            
+            
+            <form class="search-form" action="">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <input
+                            class="city-input"
+                            type="text"
+                            placeholder="Enter City Name"
+                            autocomplete="off"
+                        />
+                        <div class="search-suggestions"></div>
+                    </div>
+                    <button class="search-btn" type="submit">
+                        <i class="material-icons">search</i>
+                        <span class="btn-text">Search</span>
+                    </button>
+                </div>
+                <div class="quick-actions">
+                    <button type="button" class="location-btn" title="Get Current Location">
+                        <i class="material-icons">my_location</i>
+                        <span>Current Location</span>
+                    </button>
+                    <button type="button" class="favorites-btn" title="Favorite Cities">
+                        <i class="material-icons">favorite</i>
+                        <span>Favorites</span>
+                    </button>
+                </div>
+            </form>
+
+            
+            <div class="status-container">
+                <div class="error-message" style="display: none;">
+                    <i class="material-icons">error_outline</i>
+                    <span class="error-text">City not found. Please try again.</span>
+                    <button class="close-btn">
+                        <i class="material-icons">close</i>
+                    </button>
+                </div>
+                
+                <div class="loading-container" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <p>Fetching weather data...</p>
+                </div>
+
+                <div class="success-message" style="display: none;">
+                    <i class="material-icons">check_circle</i>
+                    <span>Weather data updated successfully!</span>
+                </div>
+            </div>
+
+            
+            <div class="favorites-dropdown" style="display: none;">
+                <h3>Favorite Cities</h3>
+                <div class="favorites-list"></div>
+                <div class="no-favorites" style="display: none;">
+                    <p>No favorite cities yet. Add some by clicking the heart icon!</p>
+                </div>
+            </div>
+
+            
+            <div class="weather-content">
+                
+                <div class="city-date-section">
+                    <div class="city-info">
+                        <h2 class="city">City</h2>
+                        <button class="add-favorite" title="Add to Favorites">
+                            <i class="material-icons">favorite_border</i>
+                        </button>
+                    </div>
+                    <div class="date-info">
+                        <h2 class="date">Date</h2>
+                        <p class="local-time">Local Time</p>
+                    </div>
+                </div>
+
+                
+                <div class="temperature-info">
+                    <div class="description">
+                        <i class="material-icons weather-icon"></i>
+                        <div class="weather-details">
+                            <span class="description-text">Weather</span>
+                            <span class="feels-like">Feels like</span>
+                        </div>
+                    </div>
+                    <div class="temp-container">
+                        <div class="temp">Temperature</div>
+                        <div class="temp-range">
+                            <span class="temp-max">Max</span>
+                            <span class="temp-min">Min</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="additional-info">
+                    <div class="wind-info">
+                        <i class="material-icons">air</i>
+                        <div class="info-content">
+                            <h3 class="wind-speed">Speed</h3>
+                            <p class="wind-label">Wind</p>
+                            <div class="wind-direction">
+                                <i class="material-icons wind-arrow">navigation</i>
+                                <span class="wind-deg">N</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="humidity-info">
+                        <i class="material-icons">water_drop</i>
+                        <div class="info-content">
+                            <h3 class="humidity">Percent</h3>
+                            <p class="humidity-label">Humidity</p>
+                            <div class="humidity-bar">
+                                <div class="humidity-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="visibility-info">
+                        <i class="material-icons">visibility</i>
+                        <div class="info-content">
+                            <h3 class="visibility-distance">Distance</h3>
+                            <p class="visibility">Visibility</p>
+                            <div class="visibility-indicator">
+                                <div class="visibility-level"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="extra-info">
+                    <div class="pressure-info">
+                        <i class="material-icons">speed</i>
+                        <div>
+                            <h3 class="pressure">1013 hPa</h3>
+                            <p>Pressure</p>
+                        </div>
+                    </div>
+                    <div class="uv-info">
+                        <i class="material-icons">wb_sunny</i>
+                        <div>
+                            <h3 class="uv-index">0</h3>
+                            <p>UV Index</p>
+                        </div>
+                    </div>
+                    <div class="sunrise-info">
+                        <i class="material-icons">wb_twilight</i>
+                        <div>
+                            <h3 class="sunrise">06:00</h3>
+                            <p>Sunrise</p>
+                        </div>
+                    </div>
+                    <div class="sunset-info">
+                        <i class="material-icons">brightness_3</i>
+                        <div>
+                            <h3 class="sunset">18:00</h3>
+                            <p>Sunset</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="hourly-forecast">
+                    <h3 class="section-title">
+                        <i class="material-icons">schedule</i>
+                        24-Hour Forecast
+                    </h3>
+                    <div class="hourly-container">
+                        
+                    </div>
+                </div>
+
+                
+                <div class="forecast-section">
+                    <h3 class="section-title">
+                        <i class="material-icons">date_range</i>
+                        5-Day Forecast
+                    </h3>
+                    <div class="forecast-container">
+                        
+                    </div>
+                </div>
+
+                
+                <div class="charts-section">
+                    <h3 class="section-title">
+                        <i class="material-icons">show_chart</i>
+                        Weather Trends
+                    </h3>
+                    <div class="chart-tabs">
+                        <button class="chart-tab active" data-chart="temperature">Temperature</button>
+                        <button class="chart-tab" data-chart="humidity">Humidity</button>
+                        <button class="chart-tab" data-chart="pressure">Pressure</button>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="weatherChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="alerts-modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Weather Alerts</h3>
+                    <button class="close-modal">
+                        <i class="material-icons">close</i>
+                    </button>
+                </div>
+                <div class="alerts-content">
+                    
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
