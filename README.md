@@ -2,8 +2,6 @@
 
 A responsive and real-time weather dashboard built using **HTML**, **CSS**, and **JavaScript**, which fetches live weather data using a public weather API. It presents both current and 5-day weather forecasts along with detailed weather metrics.
 
-![Banner](sky.jpg)
-
 ---
 
 ## 🌟 Features
