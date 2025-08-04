@@ -75,9 +75,6 @@ Rendering graphs and presenting data visually
 
 Making responsive websites without frameworks
 
-📸 Screenshots
-Add images or GIFs from your app interface
-
 📄 License
 This project is licensed under the MIT License.
 
